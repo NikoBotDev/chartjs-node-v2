@@ -1,0 +1,44 @@
+{
+  "name": "chartjs-node",
+  "version": "2.0.0",
+  "description": "Create Chart.js chart images server-side",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx grunt test --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmpowerio/chartjs-node.git"
+  },
+  "keywords": [
+    "Chartjs",
+    "Charts",
+    "Plots",
+    "Graphs"
+  ],
+  "author": "sedouard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmpowerio/chartjs-node/issues"
+  },
+  "homepage": "https://github.com/vmpowerio/chartjs-node#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "canvas": "^2.2.0",
+    "chart.js": "^2.7.3",
+    "debug": "^2.2.0",
+    "jsdom": "^13.0.0",
+    "stream-buffers": "^3.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-jscs": "^3.0.1",
+    "grunt-mocha-cli": "^4.0.0",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^5.2.0"
+  }
+}
