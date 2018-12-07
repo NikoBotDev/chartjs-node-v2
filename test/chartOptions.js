@@ -1,7 +1,10 @@
-module.exports = {type: 'line',
+const {join} = require('path');
+module.exports = {
+  type: 'line',
   fill: false,
   data:
- {labels:
+ {
+   labels:
     ['',
       '',
       '',
@@ -91,11 +94,14 @@ module.exports = {type: 'line',
       '',
       '',
       ''],
- datasets:
-    [{label: 'Rank',
-      fill: false,
-      data:
-         [915401,
+   datasets:
+    [
+      {
+        label: 'Rank',
+        fill: false,
+        data:
+         [
+           915401,
            915607,
            916258,
            910768,
@@ -184,23 +190,57 @@ module.exports = {type: 'line',
            729303,
            725457,
            725901],
-      backgroundColor: 'rgb(255, 204, 34)',
-      borderColor: 'rgb(255, 204, 34)',
-      lineTension: 0,
-      datalabels: {display: false}}]},
-  options:
- {responsive: true,
-   animation: false,
-   legend: {labels: {fontColor: '#ffffff'}},
-   scales:
-    {yAxes:
-       [{ticks:
-            {display: true,
-              reverse: true,
-              maxTicksLimit: 5,
-              fontColor: '#fff',
-              fontStyle: 'bold'}}],
-    xAxes:
-       [{gridLines: {display: false}, ticks: {display: false}}]},
-   layout: {padding: {right: 10}},
-   tooltips: {mode: 'label'}}};
+        backgroundColor: 'rgb(255, 204, 34)',
+        borderColor: 'rgb(255, 204, 34)',
+        lineTension: 0,
+        datalabels: {
+          display: false,
+        },
+      },
+    ],
+ },
+  options: {
+    responsive: true,
+    animation: false,
+    fonts: {
+      path: join(__dirname, '..', 'Exo2.0-ExtraBold.otf'),
+      family: 'Roboto',
+    },
+    legend: {
+      labels: {
+        fontColor: '#ffffff',
+      },
+    },
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            display: true,
+            reverse: true,
+            maxTicksLimit: 5,
+            fontColor: '#fff',
+            fontStyle: 'bold',
+            fontFamily: 'Roboto',
+          },
+        },
+      ],
+      xAxes: [
+        {
+          gridLines: {
+            display: false,
+          }, ticks: {
+            display: false,
+          },
+        },
+      ],
+    },
+    layout: {
+      padding: {
+        right: 10,
+      },
+    },
+    tooltips: {
+      mode: 'label',
+    },
+  },
+};

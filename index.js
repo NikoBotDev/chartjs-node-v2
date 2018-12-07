@@ -83,9 +83,16 @@ class ChartjsNode extends EventEmitter {
       canvasMethods.forEach((method) =>
         global[method] = window[method]
       );
-
+      if (configuration.options.fonts) {
+        if (Array.isArray(configuration.options.fonts)) {
+          for (const font of configuration.options.fonts) {
+            canvas.registerFont(font.path, {family: font.family});
+          }
+        } else {
+          canvas.registerFont(configuration.options.fonts.path, {family: configuration.options.fonts.family});
+        }
+      }
       global.CanvasRenderingContext2D = canvas.Context2d;
-
       global.navigator = {
         userAgent: 'node.js',
       };
