@@ -100,7 +100,7 @@ class ChartjsNode extends EventEmitter {
       }
       if (configuration.options.defaults) {
         for (const {prop, value} of configuration.options.defaults) {
-          Chartjs.defaults[prop] = value;
+          Chartjs.defaults.global[prop] = value;
         }
       }
       global.CanvasRenderingContext2D = canvas.Context2d;
