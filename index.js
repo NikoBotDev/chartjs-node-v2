@@ -98,6 +98,11 @@ class ChartjsNode extends EventEmitter {
           canvas.registerFont(configuration.options.fonts.path, {family: configuration.options.fonts.family});
         }
       }
+      if (configuration.options.defaults) {
+        for (const {prop, value} of configuration.options.defaults) {
+          Chartjs.defaults[prop] = value;
+        }
+      }
       global.CanvasRenderingContext2D = canvas.Context2d;
       global.navigator = {
         userAgent: 'node.js',
