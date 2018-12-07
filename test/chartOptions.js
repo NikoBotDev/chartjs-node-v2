@@ -205,6 +205,7 @@ module.exports = {
     fonts: {
       path: join(__dirname, '..', 'Exo2.0-ExtraBold.otf'),
       family: 'Roboto',
+      global: true,
     },
     legend: {
       labels: {

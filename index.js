@@ -86,9 +86,15 @@ class ChartjsNode extends EventEmitter {
       if (configuration.options.fonts) {
         if (Array.isArray(configuration.options.fonts)) {
           for (const font of configuration.options.fonts) {
+            if (font.global) {
+              Chartjs.defaults.global.defaultFontFamily = font.family;
+            }
             canvas.registerFont(font.path, {family: font.family});
           }
         } else {
+          if (configuration.options.fonts.global) {
+            Chartjs.defaults.global.defaultFontFamily = configuration.options.fonts.family;
+          }
           canvas.registerFont(configuration.options.fonts.path, {family: configuration.options.fonts.family});
         }
       }
